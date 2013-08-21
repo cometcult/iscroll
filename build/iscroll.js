@@ -247,7 +247,7 @@ function IScroll (el, options) {
 		bounceTime: 600,
 		bounceEasing: '',
 
-		enableMouseEvents: true,
+		disableMouseEvents: false,
 
 		preventDefault: true,
 
@@ -819,7 +819,7 @@ IScroll.prototype = {
 		eventType(window, 'orientationchange', this);
 		eventType(window, 'resize', this);
 
-		if ( this.options.enableMouseEvents ) {
+		if ( !this.options.disableMouseEvents ) {
 			eventType(this.wrapper, 'mousedown', this);
 			eventType(target, 'mousemove', this);
 			eventType(target, 'mousecancel', this);
